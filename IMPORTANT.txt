@@ -1,0 +1,35 @@
+Configuration That I Use
+
+* A-CLT :
+	- eth0 (enp0s3) = 192.168.10.10 (static)
+
+* A-RTR :
+	- eth0 (enp0s3) = 192.168.10.1 (static)
+	- eth1 (enp0s8) = - 172.16.10.1 (static)
+				- 10.10.10.1 (VPN)
+	- eth2 (enp0s9) = bridge adapter (DHCP)
+
+* B-RTR :
+	- eth0 (enp0s8) = - 172.16.10.2 (static)
+				- 10.10.10.2 (VPN)
+	- eth1 
+	- eth2 (enp0s9) = bridge adapter (DHCP)
+
+* B-SRV :
+	- ethernet = same adapter like eth1 B-RTR
+
+Task
+
+* Basic Configuration nde
+	For all machines in the given topology, do the following :
+	- OS installed
+	- Hostname configured
+	- IP address set
+	- Timezone set to Asia/Jakarta
+
+* Client Addressing
+	- Make sure clients in the internal network A (A-CLT) can automatically lease address from A-RTR (DHCP)
+	- Make the leased address for A-CLT stay by mapping its hardware (Static)
+
+* Intersite Connection
+	- Configure OpenVPN for A-RTR and B-RTR to established site-to-site VPN.
