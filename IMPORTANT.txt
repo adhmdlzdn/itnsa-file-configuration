@@ -21,7 +21,7 @@ Configuration That I Use
 
 Task
 
-* Basic Configuration nde
+* Basic Configuration
 	For all machines in the given topology, do the following :
 	- OS installed
 	- Hostname configured
@@ -34,3 +34,35 @@ Task
 
 * Intersite Connection
 	- Configure OpenVPN for A-RTR and B-RTR to established site-to-site VPN.
+
+* Directory Service
+	- Set B-SRV as the Primary Domain Controller of beta.net forest
+	- Create User0001-User1000
+
+* DNS
+	- A-CLT can access soup and drive dns but not the primary dns from B-SRV
+	- DNS servers should be secured via IP whitelisting and cyrptography
+
+* Web
+	Configure two website :
+	- https://drive.beta.net
+		- Only User0500-User0699 can access this site.
+		- should show the directory listing of C:\www\root\drive.beta.net in B-SRV
+		- Proxied by B-RTR using HAProxy
+	- https://soup.beta.net
+		- Hosted in A-RTR using Nginx
+		- Only Accessible from A-CLT
+		- Webroot is located in /srv/www/soup.beta.net
+
+* Storage
+	- Share the path /srv/www/soup.beta.net using NFSv4
+	- NFS share should only be accessible via A-CLT. Use a level 10 RAID as the underlying block storage
+
+* File Sharing
+	- Share the C:\share\collaboration directory in B-SRV via SMB. Allow only .html and .txt files whose size is no bigger than 5 MB
+	- Limit access to User0300-User0499
+
+* Backup
+	- Configure a scheduler using SystemD in A-RTR to backup the content of soup.beta.net to B-RTR in C:\share\collaboration\soup.beta.net
+	- The backup should happen every hour
+
