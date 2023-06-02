@@ -8,9 +8,80 @@
   ITNSA LKS Kota Tangerang 2023<br>
 </h1>
 
-<h4 align="center">Pembahasan terkait LKS Kota Tangerang tahun 2023 bidang ITNSA. Diupdate secara bertahap sampai selesai.</h4>
+<h4 align="center">Pembahasan terkait soal LKS (Lomba Kompetensi Siswa) SMK Kota Tangerang tahun 2023 bidang ITNSA (IT Network Systems Administration) untuk modul Client Server Environments. Diupdate secara bertahap sampai selesai.</h4>
 
 <br>
+
+## Configuration That I Use
+
+* A-CLT :
+	- eth0 (enp0s3) = 192.168.10.10 (static)
+
+* A-RTR :
+	- eth0 (enp0s3) = 192.168.10.1 (static)
+	- eth1 (enp0s8) = - 172.16.10.1 (static)
+			- 10.10.10.1 (VPN)
+	- eth2 (enp0s9) = bridge adapter (DHCP)
+
+* B-RTR :
+	- eth0 (enp0s8) = - 172.16.10.2 (static)
+			- 10.10.10.2 (VPN)
+	- eth1 
+	- eth2 (enp0s9) = bridge adapter (DHCP)
+
+* B-SRV :
+	- ethernet = same adapter like eth1 B-RTR
+
+<br>
+
+## Task
+
+* Basic Configuration
+	- For all machines in the given topology, do the following :
+	  - OS installed
+	  - Hostname configured
+	  - IP address set
+	  - Timezone set to Asia/Jakarta
+
+* Client Addressing
+	- Make sure clients in the internal network A (A-CLT) can automatically lease address from A-RTR (DHCP)
+	- Make the leased address for A-CLT stay by mapping its hardware (Static)
+
+* Intersite Connection
+	- Configure OpenVPN for A-RTR and B-RTR to established site-to-site VPN.
+
+* Directory Service
+	- Set B-SRV as the Primary Domain Controller of beta.net forest
+	- Create User0001-User1000
+
+* DNS
+	- A-CLT can access soup and drive dns but not the primary dns from B-SRV
+	- DNS servers should be secured via IP whitelisting and cyrptography
+
+* Web
+  - Configure two website :
+	- drive.beta.net :
+		- Only User0500-User0699 can access this site.
+		- should show the directory listing of C:\www\root\drive.beta.net in B-SRV
+		- Proxied by B-RTR using HAProxy
+	- soup.beta.net :
+		- Hosted in A-RTR using Nginx
+		- Only Accessible from A-CLT
+		- Webroot is located in /srv/www/soup.beta.net
+
+* Storage
+	- Share the path /srv/www/soup.beta.net using NFSv4
+	- NFS share should only be accessible via A-CLT. Use a level 10 RAID as the underlying block storage
+
+* File Sharing
+	- Share the C:\share\collaboration directory in B-SRV via SMB. Allow only .html and .txt files whose size is no bigger than 5 MB
+	- Limit access to User0300-User0499
+
+* Backup
+	- Configure a scheduler using SystemD in A-RTR to backup the content of soup.beta.net to B-RTR in C:\share\collaboration\soup.beta.net
+	- The backup should happen every hour
+
+
 
 <!--
 <p align="center">
@@ -37,7 +108,7 @@
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
--->
+
 
 [//]: ![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
 [//]: # (screenshot terhadap program yang dibuat)
@@ -119,7 +190,9 @@ This software uses the following open source packages:
 	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
 
-## Kamu mungkin tertarik...
+-->
+
+## You Might Be Interest
 
 - [Km Gpp](https://github.com/adhmdlzdn/km-gpp) - A simple program using Python language
 - [Simptech.id](https://github.com/adhmdlzdn/simptech-id) - A simple website using only HTML, CSS and JS
