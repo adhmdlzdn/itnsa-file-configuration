@@ -10,7 +10,13 @@
 
 <h4 align="center">Pembahasan terkait soal LKS (Lomba Kompetensi Siswa) SMK Kota Tangerang tahun 2023 bidang ITNSA (IT Network Systems Administration) untuk modul Client Server Environments. Diupdate secara bertahap sampai selesai.</h4>
 
+<br><br>
+
+## Topology
 <br>
+<img src="https://raw.githubusercontent.com/adhmdlzdn/itnsa-lks-kotang/master/assets/topology.png">
+
+<br><br>
 
 ## Configuration That I Use
 
@@ -32,7 +38,7 @@
 * B-SRV :
 	- ethernet = same adapter like eth1 B-RTR
 
-<br>
+<br><br>
 
 ## Task
 
@@ -191,6 +197,8 @@ This software uses the following open source packages:
 </a>
 
 -->
+
+<br><br>
 
 ## You Might Be Interest
 
