@@ -7,6 +7,18 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
+# Static IP to A-RTR
+auto enp0s3
+iface enp0s3 inet static
+address 172.20.10.3
+network 172.20.10.0
+broadcast 172.20.10.255
+netmask 255.255.255.0
+
+# DHCP IP from B-SRV
+auto enp0s8
+iface enp0s8 inet dhcp
+
 # Inet
 auto enp0s9
 iface enp0s9 inet dhcp
