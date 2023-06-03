@@ -7,13 +7,21 @@ source /etc/network/interfaces.d/*
 auto lo
 iface lo inet loopback
 
-# DHCP to A-CLT
+# DHCP IP to A-CLT
 auto enp0s3
 iface enp0s3 inet static
 address 192.168.10.1
 netmask 255.255.255.0
 network 192.168.10.0
 broadcast 192.168.10.255
+
+# Static IP to B-RTR
+auto enp0s8
+iface enp0s8 inet static
+address 172.20.10.2
+network 172.20.10.0
+broadcast 172.20.10.255
+netmask 255.255.255.0
 
 # Inet
 auto enp0s9
