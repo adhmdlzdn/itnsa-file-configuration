@@ -12,6 +12,13 @@
 
 <br>
 
+## Materials
+* GNU/Linux Debian 11
+* Windows Server 2019
+* Oracle VM VirtualBox
+
+<br>
+
 ## Topology
 <img src="https://raw.githubusercontent.com/adhmdlzdn/itnsa-lks-kotang/master/assets/topology.png">
 
