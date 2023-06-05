@@ -1,6 +1,6 @@
+<a href="https://github.com/adrhmdlz/itnsa-lks-kotang" target="_blank"><img alt="GitHub hits" src="https://img.shields.io/github/last-commit/adrhmdlz/itnsa-lks-kotang?label=repository%20updated&style=flat-square"></a>
 
 <h1 align="center">
-  <br>
   <!--
   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.png" alt="Markdownify" width="200"></a>
   -->
@@ -20,7 +20,7 @@
 <br>
 
 ## Topology
-<img src="https://raw.githubusercontent.com/adhmdlzdn/itnsa-lks-kotang/master/assets/topology.png">
+<img src="https://raw.githubusercontent.com/adrhmdlz/itnsa-lks-kotang/master/assets/topology.png">
 
 <br>
 
@@ -36,9 +36,9 @@
 	- eth2 (enp0s9) = bridge adapter (DHCP)
 
 * B-RTR :
-	- eth0 (enp0s8) = - 172.16.10.2 (static)
+	- eth0 (enp0s3) = - 172.16.10.2 (static)
 			- 10.10.10.2 (VPN)
-	- eth1 
+	- eth1 (enp0s8) = DHCP IP from B-SRV
 	- eth2 (enp0s9) = bridge adapter (DHCP)
 
 * B-SRV :
@@ -208,14 +208,16 @@ This software uses the following open source packages:
 
 ## You Might Be Interest
 
-- [Km Gpp](https://github.com/adhmdlzdn/km-gpp) - A simple program using Python language
-- [Simptech.id](https://github.com/adhmdlzdn/simptech-id) - A simple website using only HTML, CSS and JS
+- [Km Gpp](https://github.com/adrhmdlz/km-gpp) - A simple program using Python language
+- [Simptech.id](https://github.com/adrhmdlz/simptech-id) - A simple website using only HTML, CSS and JS
 
 ---
 
-> [adhmdlzdn.github.io](https://adhmdlzdn.github.io) &nbsp;&middot;&nbsp;
-> GitHub [@adhmdlzdn](https://github.com/adhmdlzdn) &nbsp;&middot;&nbsp;
-> Instagram [@adrhmdlz](https://instagram.com/adrhmdlz)
+> [adrhmdlz.github.io](https://adrhmdlz.github.io) &nbsp;&middot;&nbsp;
+> Gmail [@adrianalzidan35](mailto:adrianalzidan35@gmail.com) &nbsp;&middot;&nbsp;
+> GitHub [@adrhmdlz](https://github.com/adrhmdlz) &nbsp;&middot;&nbsp;
+> Instagram [@adrhmdlz](https://instagram.com/adrhmdlz) &nbsp;&middot;&nbsp;
+> LinkedIn [@adrhmdlz](https://www.linkedin.com/in/adrhmdlz/)
 
 
 
