@@ -36,13 +36,13 @@
 	- eth2 (enp0s9) = bridge adapter (DHCP)
 
 * B-RTR :
-	- eth0 (enp0s3) = - 172.16.10.2 (static)
+	- eth0 (enp0s3) = - 172.20.10.3 (static)
 			- 10.10.10.2 (VPN)
-	- eth1 (enp0s8) = DHCP IP from B-SRV
+	- eth1 (enp0s8) = 192.168.20.1 (DHCP from B-SRV)
 	- eth2 (enp0s9) = bridge adapter (DHCP)
 
 * B-SRV :
-	- ethernet = same adapter like eth1 B-RTR
+	- ethernet = 192.168.20.10 (same adapter like eth1 B-RTR)
 
 <br>
 
